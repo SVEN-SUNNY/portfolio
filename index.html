@@ -4,16 +4,512 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sven Sunny Kottuppallil - Robotics Engineer</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff10"><polygon points="1000,100 1000,0 0,100"/></svg>');
+            background-size: cover;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--secondary);
+            margin: 0.5rem;
+        }
+
+        .btn:hover {
+            background: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            background: white;
+            margin: 2rem auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 3rem 2rem;
+            position: relative;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            border-radius: 20px 20px 0 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        /* Cards & Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            padding: 0.3rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .card li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .skill-category h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background: var(--secondary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Media Gallery */
+        .media-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .media-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 4/3;
+        }
+
+        .media-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .media-item img,
+        .media-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .media-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: all 0.3s ease;
+        }
+
+        .media-item:hover .media-caption {
+            transform: translateY(0);
+        }
+
+        /* Project Highlights */
+        .project-highlight {
+            background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff10"><polygon points="0,0 1000,50 0,100"/></svg>');
+            background-size: cover;
+        }
+
+        .project-highlight-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--secondary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+            width: 50%;
+            padding: 0 2rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -40px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -40px;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary);
+            transform: scale(1.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 50px;
+            }
+
+            .timeline-content::before {
+                left: -30px !important;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="container">
+        <div class="container header-content">
             <h1>Sven Sunny Kottuppallil</h1>
-            <p>Robotics Engineer</p>
-            <a href="https://drive.google.com/file/d/1C3_e2F8Cfg38MRzcMaDAzw3WdJGLKLEW/view?usp=sharing" download class="btn">Download Resume</a>
+            <p>Robotics & Mechatronics Engineer</p>
+            <p>MS in Mechatronics and Robotics | NYU Tandon School of Engineering</p>
+            <div class="header-buttons">
+                <a href="#contact" class="btn">Get In Touch</a>
+                <a href="#projects" class="btn btn-outline">View My Work</a>
+            </div>
         </div>
     </header>
 
@@ -21,15 +517,12 @@
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#academic-details">Education</a></li>
-            <li><a href="#technical-proficiency">Skills</a></li>
-            <li><a href="#internships">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#responsibilities">Responsibilities</a></li>
-            <li><a href="#conferences">Conferences</a></li>
             <li><a href="#research">Research</a></li>
-            <li><a href="#club">Club</a></li>
+            <li><a href="#media">Media</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -37,251 +530,354 @@
     <!-- About Section -->
     <section id="about" class="container">
         <h2>About Me</h2>
-        <p>
-            I am a passionate Mechatronics and Robotics Engineer with a strong background in robotics, embedded systems, and machine learning. Currently pursuing my MS in Mechatronics and Robotics at NYU Tandon School of Engineering, I have hands-on experience in designing and developing innovative robotic systems.
-        </p>
+        <div class="grid">
+            <div class="card">
+                <h3>Professional Summary</h3>
+                <p>Passionate Robotics Engineer with extensive experience in autonomous systems, machine learning, and embedded systems. Currently pursuing MS in Mechatronics and Robotics at NYU Tandon with hands-on experience in industrial automation, robotics research, and full-stack robotic system development.</p>
+                <p><strong>Work Authorization:</strong> STEM OPT Eligible</p>
+                <p><strong>Languages:</strong> English (Fluent), Malayalam (Native), Hindi (Conversational), Tamil (Conversational)</p>
+            </div>
+            <div class="card">
+                <h3>Career Focus</h3>
+                <p>Seeking challenging roles in:</p>
+                <ul>
+                    <li>Autonomous Systems & Robotics</li>
+                    <li>Machine Learning & AI Integration</li>
+                    <li>Embedded Systems & Firmware</li>
+                    <li>Research & Development</li>
+                    <li>Systems Engineering</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <!-- Education -->
-    <section id="academic-details" class="container">
+    <section id="education" class="container">
         <h2>Education</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>MS in Mechatronics and Robotics</h3>
-                <p>NYU Tandon School of Engineering</p>
-                <p>Sep 2024 - May 2026</p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>MS in Mechatronics and Robotics</h3>
+                    <p><strong>NYU Tandon School of Engineering</strong></p>
+                    <p>Sep 2024 - May 2026 | GPA: 3.45/4.0</p>
+                    <p>Focus: Autonomous Systems, Machine Learning, Robotics</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>B. Tech in Mechatronics (Robotics)</h3>
-                <p>SRM Institute of Science and Technology, Chennai</p>
-                <p>GPA: 3.5 | Sep 2020 - Sep 2024</p>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>B.Tech in Mechatronics (Robotics)</h3>
+                    <p><strong>SRM Institute of Science and Technology</strong></p>
+                    <p>Sep 2020 - Jul 2024 | CGPA: 8.4/10</p>
+                    <p>Specialization in Robotics Systems</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Minor in Management Studies</h3>
-                <p>SRM Business School, Chennai</p>
-                <p>GPA: 3.5 | Sep 2020 - Sep 2024</p>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Minor in Management Studies</h3>
+                    <p><strong>SRM Business School</strong></p>
+                    <p>Sep 2020 - Jul 2024 | GPA: 3.5/4</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Technical Skills -->
-    <section id="technical-proficiency" class="container">
+    <!-- Skills -->
+    <section id="skills" class="container">
         <h2>Technical Skills</h2>
         <div class="skills-grid">
-            <div class="skill">SolidWorks</div>
-            <div class="skill">Python</div>
-            <div class="skill">MATLAB</div>
-            <div class="skill">ROS2</div>
-            <div class="skill">Gazebo</div>
-            <div class="skill">urdf</div>
-            <div class="skill">Machine Learning</div>
-            <div class="skill">Embedded C</div>
-            <div class="skill">Arduino</div>
-            <div class="skill">Raspberry Pi</div>
-            <div class="skill">OpenCV</div>
-            <div class="skill">PLC Programming</div>
-            <div class="skill">CATIA</div>
-            <div class="skill">ANSYS Workbench</div>
-            <div class="skill">AutoCAD</div>
-            <div class="skill">Java</div>
-            <div class="skill">C Programming</div>
-            <div class="skill">Computer Vision</div>
-            <div class="skill">Basic Stamp</div>
-            <div class="skill">Prompt Engineering</div>
-            <div class="skill">Sensor Integration</div>
-            <div class="skill">Software Development</div>
+            <div class="skill-category">
+                <h4>Programming & AI/ML</h4>
+                <div class="skill-items">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">C++</span>
+                    <span class="skill-item">MATLAB</span>
+                    <span class="skill-item">Java</span>
+                    <span class="skill-item">Embedded C</span>
+                    <span class="skill-item">PyTorch</span>
+                    <span class="skill-item">Machine Learning</span>
+                    <span class="skill-item">Deep Learning</span>
+                    <span class="skill-item">Reinforcement Learning</span>
+                    <span class="skill-item">Computer Vision</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Robotics & Controls</h4>
+                <div class="skill-items">
+                    <span class="skill-item">ROS/ROS2</span>
+                    <span class="skill-item">SLAM</span>
+                    <span class="skill-item">PID Control</span>
+                    <span class="skill-item">Motion Planning</span>
+                    <span class="skill-item">Sensor Fusion</span>
+                    <span class="skill-item">Kinematics</span>
+                    <span class="skill-item">Motor Control</span>
+                    <span class="skill-item">Trajectory Planning</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Hardware & Embedded</h4>
+                <div class="skill-items">
+                    <span class="skill-item">Arduino</span>
+                    <span class="skill-item">Raspberry Pi</span>
+                    <span class="skill-item">STM32</span>
+                    <span class="skill-item">Altium</span>
+                    <span class="skill-item">IMU</span>
+                    <span class="skill-item">LiDAR</span>
+                    <span class="skill-item">RealSense</span>
+                    <span class="skill-item">PLC</span>
+                    <span class="skill-item">Embedded Systems</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Engineering & Design</h4>
+                <div class="skill-items">
+                    <span class="skill-item">SolidWorks</span>
+                    <span class="skill-item">ANSYS</span>
+                    <span class="skill-item">CATIA</span>
+                    <span class="skill-item">Fusion 360</span>
+                    <span class="skill-item">AutoCAD</span>
+                    <span class="skill-item">Autodesk Inventor</span>
+                    <span class="skill-item">FEA Analysis</span>
+                    <span class="skill-item">GD&T</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Work Experience -->
-    <section id="internships" class="container">
-        <h2>Work Experience</h2>
-        <div class="card">
-            <h3>Research Intern (Robotics and Automation)</h3>
-            <p>Polygone Systems INC</p>
-            <p>May 2025 - Present</p>
-            <ul>
-                <li>An environmental technology startup dedicated to preserving ecosystems and human health through micro
-plastic removal.</li>
-                <li>Advanced CAD modeling and iterative prototyping in Autodesk Inventor, overseeing fabrication, procurement,
-and supplier/vendor management. Additionally, I engineered and implemented autonomous control systems to
-optimize operational efficiency and system automation.</li>
-            </ul>
-            <a href="https://tinyurl.com/bdzbusat" target="_blank" class="btn">Learn More</a>
-        </div>
-        <div class="card">
-            <h3>Systems Engineer/Machine Learning Intern (Co-op)</h3>
-            <p>Renault Nissan Technology & Business Centre India</p>
-            <p>Jan 2024 - Jul 2024</p>
-            <ul>
-                <li>Designed a Pad Wear Prediction Software with embedded machine learning algorithms for brake pad life analysis.</li>
-                <li>Awarded for innovation in the chassis/powertrain sector.</li>
-            </ul>
-            <a href="https://tinyurl.com/2tz4aj99" target="_blank" class="btn">Learn More</a>
-        </div>
-        <div class="card">
-            <h3>Building Technology Intern</h3>
-            <p>Larsen and Tubro</p>
-            <p>Jun 2023 - Jul 2023</p>
-            <ul>
-                <li>Developed an ML-based AC control system with hardware integration.</li>
-            </ul>
-            <a href="https://tinyurl.com/yc5t9x5u" target="_blank" class="btn">Learn More</a>
-        </div>
-        <div class="card">
-            <h3>Teaching Assistant</h3>
-            <p>New York University</p>
-            <p>Jan 2025 - May 2025</p>
-            <ul>
-                <li>Assisted in teaching "Physics-Informed Machine Learning" under Prof. Augustin Guibad.</li>
-            </ul>
+    <!-- Experience -->
+    <section id="experience" class="container">
+        <h2>Professional Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Research Intern (Robotics)</h3>
+                    <p><strong>PolyGone Systems INC</strong> | Princeton, NJ</p>
+                    <p>May 2025 - Present</p>
+                    <ul>
+                        <li>Advanced CAD modeling and iterative prototyping in Autodesk Inventor</li>
+                        <li>Engineered autonomous control systems for microplastic filtration</li>
+                        <li>Oversaw fabrication, procurement, and supplier management</li>
+                        <li>Developed automated lifting/lowering mechanisms</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Systems Engineer/ML Engineer (Co-op)</h3>
+                    <p><strong>Renault Nissan Technology</strong> | India</p>
+                    <p>Jan 2024 - Jul 2024</p>
+                    <ul>
+                        <li>Developed Brake Pad Wear prediction ML software</li>
+                        <li>Conducted performance testing and data analysis</li>
+                        <li>Ensured compliance with EU emission standards</li>
+                        <li>Customized user-friendly software interface</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Firmware Engineer Intern</h3>
+                    <p><strong>Larsen and Toubro</strong> | India</p>
+                    <p>Jun 2023 - Jul 2023</p>
+                    <ul>
+                        <li>Developed ML-based AC control system</li>
+                        <li>Conducted coolant system analysis for VAVE project</li>
+                        <li>Enhanced autonomous indoor environment control</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Projects -->
     <section id="projects" class="container">
-        <h2>Projects</h2>
+        <h2>Featured Projects</h2>
         <div class="grid">
             <div class="card">
                 <h3>Gesture Controlled Continuum Robot</h3>
-                <p>Team leader in developing a robot for tunnel inspection using OpenCV.</p>
-                <a href="https://tinyurl.com/54wazb33" target="_blank" class="btn">View Project</a>
+                <p><strong>Team Leader | Major Project</strong></p>
+                <p>Novel infinite DOF manipulator for tunnel inspection using OpenCV and ML</p>
+                <ul>
+                    <li>Real-time gesture recognition and control</li>
+                    <li>Autonomous crack detection system</li>
+                    <li>Published technical paper with DOI</li>
+                </ul>
+                <a href="https://dx.doi.org/10.13140/RG.2.2.30510.52802" class="btn" target="_blank">View Paper</a>
             </div>
             <div class="card">
-                <h3>Persistence of Vision Project: CLIMATE MAP</h3>
-                <p>Designed a 3D holographic illusion device for live climate depiction.</p>
+                <h3>Autonomous Mobile Robot</h3>
+                <p><strong>Master's Project | ROS SLAM</strong></p>
+                <p>LiDAR and vision-based navigation for hospital delivery</p>
+                <ul>
+                    <li>Real-time SLAM mapping with LiDAR</li>
+                    <li>Obstacle avoidance and path planning</li>
+                    <li>ROS-based navigation stack</li>
+                </ul>
             </div>
             <div class="card">
-                <h3>SCARA Manipulator Control and Simulation</h3>
-                <p>Simulated SCARA manipulator kinematics using MATLAB Simulink.</p>
+                <h3>Drone Fail-Safe System</h3>
+                <p><strong>Mars Rover Inspired Safety System</strong></p>
+                <p>Arduino-based emergency deployment system</p>
+                <ul>
+                    <li>IMU-based fall detection</li>
+                    <li>Parachute and airbag deployment</li>
+                    <li>Real-time data transmission</li>
+                </ul>
             </div>
             <div class="card">
-                <h3>Remote-Controlled Airplane</h3>
-                <p>Developed a 15m-altitude RC airplane with custom PCB soldering.</p>
-                <a href="https://tinyurl.com/yc5ya25y" target="_blank" class="btn">View Project</a>
+                <h3>Humanoid Robotics</h3>
+                <p><strong>NYU Team Project Lead</strong></p>
+                <p>Upper-body humanoid with LLM/VLM integration</p>
+                <ul>
+                    <li>Multi-disciplinary team management</li>
+                    <li>Task planning and vision systems</li>
+                    <li>Compliant actuators development</li>
+                </ul>
             </div>
-            <div class="card">
-                <h3>Line Follower Robot</h3>
-                <p>Deployed an autonomous robot using IR sensors and Raspberry Pi.</p>
-            </div>
-            <div class="card">
-                <h3>Object Recognition with Raspberry Pi</h3>
-                <p>Real-time object detection using CNN models (YOLO/SSD).</p>
-            </div>
-            <div class="card">
-                <h3>Traffic Light Assembly - 8051 Project</h3>
-                <p>Simulated and implemented a traffic light system using 8051 microcontrollers.</p>
-            </div>
-            <div class="card">
-                <h3>RRPRPR Manipulator Simulation in MATLAB</h3>
-                <p>Designed a 6-DOF manipulator using DH algorithm.</p>
-            </div>
-            <div class="card">
-                <h3>Mapping Using Intel RealSense Camera</h3>
-                <p>Mapped indoor environments for robot navigation.</p>
+        </div>
+
+        <!-- Project Highlight -->
+        <div class="project-highlight">
+            <div class="project-highlight-content">
+                <h3>Wireless EV Charging Project</h3>
+                <p><strong>Team Head | Patent Pending</strong></p>
+                <p>Leading development of wireless energy transmission system for electric vehicle charging infrastructure in collaboration with Professor Sivanandam.</p>
+                <a href="#contact" class="btn btn-outline">Learn More</a>
             </div>
         </div>
     </section>
 
-    <!-- Certifications -->
-    <section id="certifications" class="container">
-        <h2>Certifications</h2>
+    <!-- Research & Publications -->
+    <section id="research" class="container">
+        <h2>Research & Publications</h2>
         <div class="grid">
             <div class="card">
-                <h3>Certified SolidWorks Associate (CSWA)</h3>
-                <p>Dassault Systems</p>
-                <a href="https://tinyurl.com/2p9wbczc" target="_blank" class="btn">View Certificate</a>
+                <h3>Technical Paper</h3>
+                <p><strong>"Gesture Controlled Underground Tunnel Inspection Tendon Driven Continuum Robot"</strong></p>
+                <p>Published technical report with digital object identifier</p>
+                <a href="https://dx.doi.org/10.13140/RG.2.2.30510.52802" class="btn" target="_blank">DOI: 10.13140/RG.2.2.30510.52802</a>
             </div>
             <div class="card">
-                <h3>Unmanned Aerial Vehicle Design Internship</h3>
-                <p>MARS Exploration Pvt Ltd</p>
-                <a href="https://drive.google.com/file/d/1wm8HjTkj-wBCtpycePYiSGYlpDB4Dc8R/view" target="_blank" class="btn">View Certificate</a>
-            </div>
-            <div class="card">
-                <h3>Mechatronics, NPTEL</h3>
-                <p>IIT Roorkee</p>
-                <a href="https://tinyurl.com/nfnr282h" target="_blank" class="btn">View Certificate</a>
-            </div>
-            <div class="card">
-                <h3>Robotics: Computational Motion Planning</h3>
-                <p>University of Pennsylvania (Coursera)</p>
-            </div>
-            <div class="card">
-                <h3>Aerial Robotics</h3>
-                <p>University of Pennsylvania</p>
-            </div>
-            <div class="card">
-                <h3>Business Law for Managers</h3>
-                <p>IIT Kharagpur (NPTEL)</p>
-            </div>
-            <div class="card">
-                <h3>Introduction to IoT and Embedded Systems</h3>
-                <p>University of California, Irvine (Coursera)</p>
-            </div>
-            <div class="card">
-                <h3>Modeling and Debugging Embedded Systems</h3>
-                <p>University of Colorado Boulder (Coursera)</p>
+                <h3>Conference Presentations</h3>
+                <ul>
+                    <li>Incremental control system design and flight tests of micro-coaxial rotor UAV</li>
+                    <li>Multi-objective optimum energy management for hybrid electric vehicles</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Leadership -->
-    <section id="responsibilities" class="container">
-        <h2>Positions of Responsibility</h2>
-        <div class="card">
-            <h3>Wireless Transmission Project Team Lead</h3>
-            <p>Aerospace Hanger, SRMIST</p>
-            <p>May 2023 - May 2024 | Led patent development for wireless power transmission under Prof. Sivanand.</p>
-        </div>
-    </section>
-
-    <!-- Conferences -->
-    <section id="conferences" class="container">
-        <h2>Conferences and Workshops</h2>
-        <div class="card">
-            <h3>Multi-objective Optimum Energy Management Strategies for Electric Vehicle</h3>
-            <p>SRM Mechatronics Department | Mar 2023</p>
-        </div>
-        <div class="card">
-            <h3>Virtual Reality Development Training</h3>
-            <p>SRMIST | Oct 2022</p>
-        </div>
-    </section>
-
-    <!-- Research -->
-    <section id="research" class="container">
-        <h2>Research Paper</h2>
-        <div class="card">
-            <h3>Gesture Controlled Underground Tunnel Inspection Tendon Driven Continuum Robot</h3>
-            <p>May 2024 - Jul 2024 | Technical Report</p>
-            <a href="https://dx.doi.org/10.13140/RG.2.2.30510.52802" target="_blank" class="btn">View Research</a>
-        </div>
-    </section>
-
-    <!-- Club -->
-    <section id="club" class="container">
-        <h2>Club</h2>
-        <div class="card">
-            <h3>Flexible AI-enabled Mechatronics Systems</h3>
-            <p>Advisor for undergraduate robotics projects at SRMIST.</p>
+    <!-- Media Gallery -->
+    <section id="media" class="container">
+        <h2>Project Media</h2>
+        <div class="media-gallery">
+            <!-- Replace these with your actual images and videos -->
+            <div class="media-item">
+                <img src="https://via.placeholder.com/400x300/3498db/ffffff?text=Drone+Project" alt="Drone Fail-Safe System">
+                <div class="media-caption">
+                    <p>Drone Fail-Safe System Deployment</p>
+                </div>
+            </div>
+            <div class="media-item">
+                <img src="https://via.placeholder.com/400x300/e74c3c/ffffff?text=Continuum+Robot" alt="Continuum Robot">
+                <div class="media-caption">
+                    <p>Gesture Controlled Continuum Robot</p>
+                </div>
+            </div>
+            <div class="media-item">
+                <img src="https://via.placeholder.com/400x300/2ecc71/ffffff?text=Mobile+Robot" alt="Autonomous Mobile Robot">
+                <div class="media-caption">
+                    <p>Autonomous Mobile Robot with LiDAR</p>
+                </div>
+            </div>
+            <div class="media-item">
+                <video controls poster="https://via.placeholder.com/400x300/9b59b6/ffffff?text=Project+Video">
+                    <source src="#" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="media-caption">
+                    <p>Project Demonstration Video</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="container">
         <h2>Contact Me</h2>
-        <div class="contact-info">
-            <p><i class="fas fa-envelope"></i> ssk10038@nyu.edu</p>
-            <p><i class="fas fa-phone"></i> +1 (938) 257-7230</p>
-            <p><i class="fas fa-map-marker-alt"></i> USA </p>
-            <a href="https://www.linkedin.com/in/sven-sunny-kottuppallil/" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>ssk10038@nyu.edu</p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-phone"></i>
+                <h3>Phone</h3>
+                <p>+1 (938) 257-7230</p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Location</h3>
+                <p>New York, USA</p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-file-pdf"></i>
+                <h3>Resume</h3>
+                <a href="https://drive.google.com/file/d/1VEPOpx2_-BAPKMoShqwbjk57Y2T_IIIr/view" class="btn" target="_blank">Download PDF</a>
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/sven-sunny-kottuppallil/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:ssk10038@nyu.edu"><i class="fas fa-envelope"></i></a>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Sven Sunny. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 Sven Sunny Kottuppallil. All rights reserved.</p>
+            <p>Robotics Engineer | Autonomous Systems Specialist | AI Enthusiast</p>
+        </div>
     </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Add fade-in animation for sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
-
-
