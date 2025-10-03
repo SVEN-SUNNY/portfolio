@@ -655,6 +655,8 @@
                     <span class="skill-item">Embedded Systems</span>
                     <span class="skill-item">Circuit Design</span>
                     <span class="skill-item">PCB Design</span>
+                    <span class="skill-item">Jetson Nano</span>
+                    <span class="skill-item">Teensy 4.1</span>
                 </div>
             </div>
             <div class="skill-category">
@@ -729,6 +731,20 @@
     <section id="projects" class="container">
         <h2>Technical Projects</h2>
         <div class="grid">
+            <!-- EMBODIED MULTIMODAL ROBOTIC ASSISTANT FOR EDUCATION - ADDED THIS -->
+            <div class="card">
+                <h3>Embodied Multimodal Robotic Assistant for Education</h3>
+                <p><strong>MS Thesis Project | NYU Tandon</strong></p>
+                <p>Built a humanoid robot with mobile base integrating Jetson Nano, Raspberry Pi 5, and Teensy 4.1 for real-time vision, speech, and servo-based gesture control.</p>
+                <ul>
+                    <li>Implemented VLA-inspired multimodal reasoning pipeline (Intel RealSense + mic + LLM API) for context-aware blackboard interpretation</li>
+                    <li>Developed classroom explanation capabilities with natural language processing</li>
+                    <li>Integrated real-time vision processing with gesture control for interactive teaching</li>
+                    <li>Designed mobile base for classroom navigation and interaction</li>
+                    <li>Implemented servo-based gesture control for expressive communication</li>
+                </ul>
+            </div>
+
             <div class="card">
                 <h3>Gesture Controlled Continuum Robot for Tunnel Inspection</h3>
                 <p><strong>Team Leader | Major Undergraduate Project/Thesis</strong></p>
@@ -742,61 +758,7 @@
                 </ul>
                 <a href="https://dx.doi.org/10.13140/RG.2.2.30510.52802" class="btn" target="_blank">View Research Paper</a>
             </div>
-            <div class="card">
-                <h3>Persistence of Vision Project: CLIMATE MAP</h3>
-                <p><strong>Minor Project | Advanced Display Technology</strong></p>
-                <p>Designed and built an illusion device that replicates 3D globe replication with live climate depiction using Parallax Basic Stamp 2 and Teensy 3.0 microcontrollers.</p>
-                <ul>
-                    <li>Created initial stage of holographic display using persistence of vision principles</li>
-                    <li>Implemented real-time climate data visualization on 3D globe projection</li>
-                    <li>Integrated multiple microcontroller systems for synchronized display control</li>
-                    <li>Developed custom algorithms for 3D image rendering and projection mapping</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Line Follower Robot with IR Sensor and Raspberry Pi</h3>
-                <p><strong>Team Leader | Minor Project</strong></p>
-                <p>Deployed an autonomous Line Follower Robot using left and right IR sensors and Raspberry Pi 4 Model B+ microcontroller for path following applications.</p>
-                <ul>
-                    <li>Implemented PID control algorithm for precise line following</li>
-                    <li>Integrated IR sensor array for accurate path detection</li>
-                    <li>Developed real-time control system using Raspberry Pi</li>
-                    <li>Optimized sensor placement and calibration for reliable performance</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Object Recognition using Raspberry Pi V2 Camera</h3>
-                <p><strong>Minor Project | Computer Vision Application</strong></p>
-                <p>Developed a system for object detection using Raspberry Pi 4B+ and Pi V2 camera module with CNN models (YOLO and SSD) for real-time object recognition.</p>
-                <ul>
-                    <li>Implemented YOLO (You Only Look Once) and SSD (Single Shot Multi-Box Detection) models</li>
-                    <li>Optimized CNN models for Raspberry Pi computational constraints</li>
-                    <li>Achieved real-time object detection with high accuracy</li>
-                    <li>Developed applications for environmental analysis and surveillance</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>RRPRPR Manipulator Control and Simulation</h3>
-                <p><strong>Robotic Arm Simulation | Minor Project</strong></p>
-                <p>Designed 6 degree of freedom manipulator using DH algorithm and MATLAB simulation for workspace analysis and kinematic studies.</p>
-                <ul>
-                    <li>Implemented Denavit-Hartenberg (DH) parameters for robot modeling</li>
-                    <li>Developed MATLAB code for simulating n-degree of freedom robots</li>
-                    <li>Analyzed workspace and kinematic performance using Jacobian matrices</li>
-                    <li>Studied and implemented inverse kinematics algorithms</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Mapping using Intel RealSense Camera</h3>
-                <p><strong>Mobile Robotics | Minor Project</strong></p>
-                <p>Developed mapping system for trajectory planning and robot localization using Intel RealSense camera for indoor environment mapping.</p>
-                <ul>
-                    <li>Captured and processed multiple image sets for environment mapping</li>
-                    <li>Implemented algorithms for robot localization and path planning</li>
-                    <li>Created comprehensive indoor environment maps for navigation</li>
-                    <li>Integrated depth sensing for 3D environment reconstruction</li>
-                </ul>
-            </div>
+
             <div class="card">
                 <h3>Autonomous Mobile Robot with ROS SLAM</h3>
                 <p><strong>Master's Project | NYU Tandon</strong></p>
@@ -808,6 +770,7 @@
                     <li>Enabled precise endpoint navigation through sensor fusion techniques</li>
                 </ul>
             </div>
+
             <div class="card">
                 <h3>Drone Fail-Safe System (Mars Rover Inspired)</h3>
                 <p><strong>Safety-Critical Systems Project</strong></p>
@@ -819,15 +782,64 @@
                     <li>Created comprehensive safety solution with multiple redundancy layers</li>
                 </ul>
             </div>
+
             <div class="card">
-                <h3>SCARA Manipulator Control and Simulation</h3>
-                <p><strong>Master's Project | Advanced Robotics</strong></p>
-                <p>Simulated SCARA manipulator in workspace navigation using MATLAB Simulink with direct and inverse kinematics analysis.</p>
+                <h3>Persistence of Vision Project: CLIMATE MAP</h3>
+                <p><strong>Minor Project | Advanced Display Technology</strong></p>
+                <p>Designed and built an illusion device that replicates 3D globe replication with live climate depiction using Parallax Basic Stamp 2 and Teensy 3.0 microcontrollers.</p>
                 <ul>
-                    <li>Implemented DH conventions for kinematic modeling</li>
-                    <li>Analyzed Jacobian inverse, transpose and pseudo-inverse methods</li>
-                    <li>Developed simulation environment for workspace analysis</li>
-                    <li>Studied trajectory planning and optimization algorithms</li>
+                    <li>Created initial stage of holographic display using persistence of vision principles</li>
+                    <li>Implemented real-time climate data visualization on 3D globe projection</li>
+                    <li>Integrated multiple microcontroller systems for synchronized display control</li>
+                    <li>Developed custom algorithms for 3D image rendering and projection mapping</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Line Follower Robot with IR Sensor and Raspberry Pi</h3>
+                <p><strong>Team Leader | Minor Project</strong></p>
+                <p>Deployed an autonomous Line Follower Robot using left and right IR sensors and Raspberry Pi 4 Model B+ microcontroller for path following applications.</p>
+                <ul>
+                    <li>Implemented PID control algorithm for precise line following</li>
+                    <li>Integrated IR sensor array for accurate path detection</li>
+                    <li>Developed real-time control system using Raspberry Pi</li>
+                    <li>Optimized sensor placement and calibration for reliable performance</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Object Recognition using Raspberry Pi V2 Camera</h3>
+                <p><strong>Minor Project | Computer Vision Application</strong></p>
+                <p>Developed a system for object detection using Raspberry Pi 4B+ and Pi V2 camera module with CNN models (YOLO and SSD) for real-time object recognition.</p>
+                <ul>
+                    <li>Implemented YOLO (You Only Look Once) and SSD (Single Shot Multi-Box Detection) models</li>
+                    <li>Optimized CNN models for Raspberry Pi computational constraints</li>
+                    <li>Achieved real-time object detection with high accuracy</li>
+                    <li>Developed applications for environmental analysis and surveillance</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>RRPRPR Manipulator Control and Simulation</h3>
+                <p><strong>Robotic Arm Simulation | Minor Project</strong></p>
+                <p>Designed 6 degree of freedom manipulator using DH algorithm and MATLAB simulation for workspace analysis and kinematic studies.</p>
+                <ul>
+                    <li>Implemented Denavit-Hartenberg (DH) parameters for robot modeling</li>
+                    <li>Developed MATLAB code for simulating n-degree of freedom robots</li>
+                    <li>Analyzed workspace and kinematic performance using Jacobian matrices</li>
+                    <li>Studied and implemented inverse kinematics algorithms</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Mapping using Intel RealSense Camera</h3>
+                <p><strong>Mobile Robotics | Minor Project</strong></p>
+                <p>Developed mapping system for trajectory planning and robot localization using Intel RealSense camera for indoor environment mapping.</p>
+                <ul>
+                    <li>Captured and processed multiple image sets for environment mapping</li>
+                    <li>Implemented algorithms for robot localization and path planning</li>
+                    <li>Created comprehensive indoor environment maps for navigation</li>
+                    <li>Integrated depth sensing for 3D environment reconstruction</li>
                 </ul>
             </div>
         </div>
@@ -897,9 +909,17 @@
         <p style="text-align: center; margin-bottom: 2rem;">Visual documentation of my robotics projects and implementations</p>
         
         <div class="media-gallery">
+            <!-- Embodied Multimodal Robotic Assistant -->
+            <div class="media-item">
+                <img src="https://via.placeholder.com/400x300/3498db/ffffff?text=Educational+Robot" alt="Embodied Multimodal Robotic Assistant">
+                <div class="media-caption">
+                    <p>Embodied Multimodal Robotic Assistant for Education</p>
+                </div>
+            </div>
+            
             <!-- Continuum Robot -->
             <div class="media-item">
-                <img src="https://via.placeholder.com/400x300/3498db/ffffff?text=Continuum+Robot+Design" alt="Gesture Controlled Continuum Robot">
+                <img src="https://via.placeholder.com/400x300/e74c3c/ffffff?text=Continuum+Robot" alt="Gesture Controlled Continuum Robot">
                 <div class="media-caption">
                     <p>Gesture Controlled Continuum Robot - CAD Design</p>
                 </div>
@@ -907,7 +927,7 @@
             
             <!-- Drone Fail-Safe System -->
             <div class="media-item">
-                <img src="https://via.placeholder.com/400x300/e74c3c/ffffff?text=Drone+Fail-Safe" alt="Drone Fail-Safe System">
+                <img src="https://via.placeholder.com/400x300/2ecc71/ffffff?text=Drone+Fail-Safe" alt="Drone Fail-Safe System">
                 <div class="media-caption">
                     <p>Drone Fail-Safe System with Parachute Deployment</p>
                 </div>
@@ -915,7 +935,7 @@
             
             <!-- Autonomous Mobile Robot -->
             <div class="media-item">
-                <img src="https://via.placeholder.com/400x300/2ecc71/ffffff?text=Mobile+Robot" alt="Autonomous Mobile Robot">
+                <img src="https://via.placeholder.com/400x300/9b59b6/ffffff?text=Mobile+Robot" alt="Autonomous Mobile Robot">
                 <div class="media-caption">
                     <p>Autonomous Mobile Robot with LiDAR & ROS</p>
                 </div>
@@ -923,7 +943,7 @@
             
             <!-- Persistence of Vision Project -->
             <div class="media-item">
-                <img src="https://via.placeholder.com/400x300/9b59b6/ffffff?text=Climate+Map" alt="Persistence of Vision Climate Map">
+                <img src="https://via.placeholder.com/400x300/f39c12/ffffff?text=Climate+Map" alt="Persistence of Vision Climate Map">
                 <div class="media-caption">
                     <p>Persistence of Vision Climate Map Display</p>
                 </div>
@@ -931,17 +951,9 @@
             
             <!-- Line Follower Robot -->
             <div class="media-item">
-                <img src="https://via.placeholder.com/400x300/f39c12/ffffff?text=Line+Follower" alt="Line Follower Robot">
+                <img src="https://via.placeholder.com/400x300/1abc9c/ffffff?text=Line+Follower" alt="Line Follower Robot">
                 <div class="media-caption">
                     <p>Line Follower Robot with IR Sensors</p>
-                </div>
-            </div>
-            
-            <!-- Object Recognition System -->
-            <div class="media-item">
-                <img src="https://via.placeholder.com/400x300/1abc9c/ffffff?text=Object+Recognition" alt="Object Recognition System">
-                <div class="media-caption">
-                    <p>Object Recognition with Raspberry Pi Camera</p>
                 </div>
             </div>
         </div>
@@ -968,15 +980,16 @@
                 <p>+1 (938) 257-7230</p>
             </div>
             <div class="contact-card">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+                <p>Connect with me professionally</p>
+                <a href="https://www.linkedin.com/in/sven-sunny-kottuppallil/" class="btn" target="_blank">View Profile</a>
+            </div>
+            <div class="contact-card">
                 <i class="fas fa-map-marker-alt"></i>
                 <h3>Location</h3>
                 <p>New York, USA</p>
                 <p><strong>Work Authorization:</strong> STEM OPT Eligible</p>
-            </div>
-            <div class="contact-card">
-                <i class="fas fa-file-pdf"></i>
-                <h3>Resume</h3>
-                <a href="https://drive.google.com/file/d/1VEPOpx2_-BAPKMoShqwbjk57Y2T_IIIr/view" class="btn" target="_blank">Download PDF</a>
             </div>
         </div>
         
