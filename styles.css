@@ -1,4 +1,4 @@
-/* styles.css */
+/* styles.css - Enhanced Version */
 :root {
     --primary: #2c3e50;
     --secondary: #3498db;
@@ -8,6 +8,9 @@
     --success: #27ae60;
     --warning: #f39c12;
     --info: #17a2b8;
+    --text: #333;
+    --background: #f8f9fa;
+    --card-bg: #ffffff;
 }
 
 /* Base Styles & Reset */
@@ -25,7 +28,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #333;
+    color: var(--text);
     overflow-x: hidden;
 }
 
@@ -90,6 +93,13 @@ header p {
     opacity: 0.9;
 }
 
+.header-tagline {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+}
+
 /* Button Styles */
 .btn {
     display: inline-block;
@@ -125,6 +135,17 @@ header p {
 .btn-small {
     padding: 8px 20px;
     font-size: 0.9rem;
+}
+
+/* Enhanced LinkedIn Button */
+a.btn[href*="linkedin"] {
+    background: #0077b5;
+    border-color: #0077b5;
+}
+
+a.btn[href*="linkedin"]:hover {
+    background: transparent;
+    color: #0077b5;
 }
 
 /* Navigation */
@@ -169,6 +190,7 @@ section {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     padding: 3rem 2rem;
     position: relative;
+    animation: slideInFromBottom 0.6s ease-out;
 }
 
 section::before {
@@ -202,7 +224,7 @@ h2::after {
     border-radius: 2px;
 }
 
-/* Card & Grid Layouts */
+/* Cards & Grid Layouts */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -220,6 +242,28 @@ h2::after {
     position: relative;
     overflow: hidden;
     height: 100%;
+    animation: slideInFromBottom 0.6s ease-out;
+}
+
+/* Enhanced first project card (MS Thesis) */
+#projects .grid .card:first-child {
+    border-left: 5px solid var(--accent);
+    background: linear-gradient(135deg, var(--light) 0%, #f8f9fa 100%);
+    position: relative;
+}
+
+#projects .grid .card:first-child::before {
+    content: 'MS Thesis';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--accent);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
 }
 
 .card::before {
@@ -230,6 +274,10 @@ h2::after {
     right: 0;
     height: 3px;
     background: var(--secondary);
+}
+
+#projects .grid .card:first-child::before {
+    background: var(--accent);
 }
 
 .card:hover {
@@ -304,6 +352,14 @@ h2::after {
     transition: all 0.3s ease;
 }
 
+/* Highlight specific skills */
+.skill-item:contains("Jetson Nano"),
+.skill-item:contains("Teensy") {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
 .skill-item:hover {
     background: var(--secondary);
     color: white;
@@ -325,7 +381,16 @@ h2::after {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     aspect-ratio: 4/3;
-    background: #f8f9fa;
+}
+
+/* Enhanced first media item (Educational Robot) */
+.media-gallery .media-item:first-child {
+    border: 2px solid var(--secondary);
+}
+
+.media-gallery .media-item:first-child:hover {
+    border-color: var(--accent);
+    transform: scale(1.08);
 }
 
 .media-item:hover {
@@ -455,7 +520,24 @@ h2::after {
     border-radius: 15px;
     text-align: center;
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
     border-top: 4px solid var(--secondary);
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.contact-card:hover::before {
+    left: 100%;
 }
 
 .contact-card:hover {
@@ -501,6 +583,15 @@ h2::after {
     transform: scale(1.2);
 }
 
+/* Enhanced LinkedIn social link */
+.social-links a[href*="linkedin"] {
+    background: #0077b5;
+}
+
+.social-links a[href*="linkedin"]:hover {
+    background: #005582;
+}
+
 /* Footer */
 footer {
     background: var(--primary);
@@ -522,12 +613,14 @@ footer {
     }
 }
 
-@keyframes fadeIn {
-    from {
+@keyframes slideInFromBottom {
+    0% {
         opacity: 0;
+        transform: translateY(30px);
     }
-    to {
+    100% {
         opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -538,6 +631,13 @@ footer {
 .fade-in-up {
     animation: fadeInUp 0.8s ease-out;
 }
+
+/* Stagger animation for project cards */
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
 
 /* Progress Bars (for skills if needed later) */
 .progress-bar {
@@ -680,6 +780,10 @@ footer {
         background: white;
         color: black;
     }
+
+    .media-gallery {
+        display: none;
+    }
 }
 
 /* Utility Classes */
@@ -744,4 +848,16 @@ footer {
 
 @keyframes spin {
     to { transform: rotate(360deg); }
+}
+
+/* Enhanced project grid for larger screens */
+@media (min-width: 1200px) {
+    #projects .grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+/* Smooth scroll behavior enhancement */
+html {
+    scroll-padding-top: 80px;
 }
