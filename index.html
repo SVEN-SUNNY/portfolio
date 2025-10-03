@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sven Sunny Kottuppallil - Robotics Engineer</title>
+    <title>Sven Sunny Kottuppallil | Robotics & Mechatronics Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles */
         :root {
             --primary: #2c3e50;
             --secondary: #3498db;
@@ -14,6 +14,9 @@
             --light: #ecf0f1;
             --dark: #2c3e50;
             --success: #27ae60;
+            --text: #333;
+            --background: #f8f9fa;
+            --card-bg: #ffffff;
         }
 
         * {
@@ -22,11 +25,15 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
+            background: var(--background);
+            color: var(--text);
             overflow-x: hidden;
         }
 
@@ -37,11 +44,10 @@
             padding: 2rem 0;
         }
 
-        /* Header */
+        /* Header Styles */
         header {
             background: linear-gradient(135deg, var(--primary) 0%, #34495e 100%);
             color: white;
-            text-align: center;
             padding: 4rem 0;
             position: relative;
             overflow: hidden;
@@ -61,6 +67,7 @@
         .header-content {
             position: relative;
             z-index: 2;
+            text-align: center;
         }
 
         header h1 {
@@ -73,6 +80,13 @@
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             opacity: 0.9;
+        }
+
+        .header-tagline {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
         }
 
         .btn {
@@ -137,9 +151,9 @@
             color: white;
         }
 
-        /* Sections */
+        /* Section Styles */
         section {
-            background: white;
+            background: var(--card-bg);
             margin: 2rem auto;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -195,6 +209,7 @@
             border-left: 5px solid var(--secondary);
             position: relative;
             overflow: hidden;
+            height: 100%;
         }
 
         .card::before {
@@ -505,10 +520,12 @@
         <div class="container header-content">
             <h1>Sven Sunny Kottuppallil</h1>
             <p>Robotics & Mechatronics Engineer</p>
-            <p>MS in Mechatronics and Robotics | NYU Tandon School of Engineering</p>
+            <div class="header-tagline">
+                Master's candidate at NYU Tandon specializing in autonomous systems, AI integration, and full-stack robotic development. Passionate about creating innovative solutions for real-world challenges in robotics and automation.
+            </div>
             <div class="header-buttons">
-                <a href="#contact" class="btn">Get In Touch</a>
-                <a href="#projects" class="btn btn-outline">View My Work</a>
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
             </div>
         </div>
     </header>
@@ -522,7 +539,7 @@
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#research">Research</a></li>
-            <li><a href="#media">Media</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -532,21 +549,22 @@
         <h2>About Me</h2>
         <div class="grid">
             <div class="card">
-                <h3>Professional Summary</h3>
-                <p>Passionate Robotics Engineer with extensive experience in autonomous systems, machine learning, and embedded systems. Currently pursuing MS in Mechatronics and Robotics at NYU Tandon with hands-on experience in industrial automation, robotics research, and full-stack robotic system development.</p>
-                <p><strong>Work Authorization:</strong> STEM OPT Eligible</p>
-                <p><strong>Languages:</strong> English (Fluent), Malayalam (Native), Hindi (Conversational), Tamil (Conversational)</p>
+                <h3>Professional Profile</h3>
+                <p>I am a passionate Robotics Engineer with extensive experience in autonomous systems, machine learning, and embedded systems. Currently pursuing my MS in Mechatronics and Robotics at NYU Tandon School of Engineering, I specialize in bridging the gap between theoretical research and practical implementation.</p>
+                <p>My expertise spans across robotic perception, control systems, AI integration, and full-stack development of autonomous systems. I thrive on solving complex engineering challenges and creating innovative solutions that push the boundaries of what's possible in robotics.</p>
             </div>
             <div class="card">
                 <h3>Career Focus</h3>
-                <p>Seeking challenging roles in:</p>
+                <p>I am seeking challenging roles in:</p>
                 <ul>
-                    <li>Autonomous Systems & Robotics</li>
+                    <li>Autonomous Systems & Robotics Engineering</li>
                     <li>Machine Learning & AI Integration</li>
-                    <li>Embedded Systems & Firmware</li>
-                    <li>Research & Development</li>
+                    <li>Embedded Systems & Firmware Development</li>
+                    <li>Research & Development in Robotics</li>
                     <li>Systems Engineering</li>
                 </ul>
+                <p><strong>Work Authorization:</strong> STEM OPT Eligible (F-1 Visa)</p>
+                <p><strong>Languages:</strong> English (Fluent), Malayalam (Native), Hindi (Conversational), Tamil (Conversational)</p>
             </div>
         </div>
     </section>
@@ -560,22 +578,25 @@
                     <h3>MS in Mechatronics and Robotics</h3>
                     <p><strong>NYU Tandon School of Engineering</strong></p>
                     <p>Sep 2024 - May 2026 | GPA: 3.45/4.0</p>
-                    <p>Focus: Autonomous Systems, Machine Learning, Robotics</p>
+                    <p><strong>Focus Areas:</strong> Autonomous Systems, Machine Learning, Robotics Perception, Control Theory, Embedded Systems</p>
+                    <p><strong>Relevant Coursework:</strong> Robot Perception, Advanced Control Systems, Machine Learning, Embedded Systems Design, Computer Vision, Robot Dynamics</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3>B.Tech in Mechatronics (Robotics)</h3>
-                    <p><strong>SRM Institute of Science and Technology</strong></p>
+                    <h3>B.Tech in Mechatronics with Robotics Specialization</h3>
+                    <p><strong>SRM Institute of Science and Technology, Chennai</strong></p>
                     <p>Sep 2020 - Jul 2024 | CGPA: 8.4/10</p>
-                    <p>Specialization in Robotics Systems</p>
+                    <p><strong>Specialization:</strong> Robotics Systems, Automation, Control Systems</p>
+                    <p><strong>Key Projects:</strong> Gesture-Controlled Continuum Robot, Autonomous Mobile Robot, Drone Fail-Safe System</p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>Minor in Management Studies</h3>
-                    <p><strong>SRM Business School</strong></p>
+                    <p><strong>SRM Business School, Chennai</strong></p>
                     <p>Sep 2020 - Jul 2024 | GPA: 3.5/4</p>
+                    <p><strong>Focus:</strong> Project Management, Business Strategy, Operations Management</p>
                 </div>
             </div>
         </div>
@@ -594,10 +615,12 @@
                     <span class="skill-item">Java</span>
                     <span class="skill-item">Embedded C</span>
                     <span class="skill-item">PyTorch</span>
+                    <span class="skill-item">TensorFlow</span>
                     <span class="skill-item">Machine Learning</span>
                     <span class="skill-item">Deep Learning</span>
                     <span class="skill-item">Reinforcement Learning</span>
                     <span class="skill-item">Computer Vision</span>
+                    <span class="skill-item">OpenCV</span>
                 </div>
             </div>
             <div class="skill-category">
@@ -606,25 +629,30 @@
                     <span class="skill-item">ROS/ROS2</span>
                     <span class="skill-item">SLAM</span>
                     <span class="skill-item">PID Control</span>
+                    <span class="skill-item">Model Predictive Control</span>
                     <span class="skill-item">Motion Planning</span>
                     <span class="skill-item">Sensor Fusion</span>
-                    <span class="skill-item">Kinematics</span>
+                    <span class="skill-item">Kinematics & Dynamics</span>
                     <span class="skill-item">Motor Control</span>
                     <span class="skill-item">Trajectory Planning</span>
+                    <span class="skill-item">Adaptive Control</span>
+                    <span class="skill-item">Kalman Filter</span>
                 </div>
             </div>
             <div class="skill-category">
-                <h4>Hardware & Embedded</h4>
+                <h4>Hardware & Embedded Systems</h4>
                 <div class="skill-items">
                     <span class="skill-item">Arduino</span>
                     <span class="skill-item">Raspberry Pi</span>
                     <span class="skill-item">STM32</span>
-                    <span class="skill-item">Altium</span>
-                    <span class="skill-item">IMU</span>
+                    <span class="skill-item">Altium Designer</span>
+                    <span class="skill-item">IMU Integration</span>
                     <span class="skill-item">LiDAR</span>
-                    <span class="skill-item">RealSense</span>
-                    <span class="skill-item">PLC</span>
+                    <span class="skill-item">Intel RealSense</span>
+                    <span class="skill-item">PLC Programming</span>
                     <span class="skill-item">Embedded Systems</span>
+                    <span class="skill-item">Circuit Design</span>
+                    <span class="skill-item">PCB Design</span>
                 </div>
             </div>
             <div class="skill-category">
@@ -638,6 +666,20 @@
                     <span class="skill-item">Autodesk Inventor</span>
                     <span class="skill-item">FEA Analysis</span>
                     <span class="skill-item">GD&T</span>
+                    <span class="skill-item">Rapid Prototyping</span>
+                    <span class="skill-item">3D Printing</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h4>Industrial Applications</h4>
+                <div class="skill-items">
+                    <span class="skill-item">Lean Six Sigma</span>
+                    <span class="skill-item">VAVE</span>
+                    <span class="skill-item">HVAC Design</span>
+                    <span class="skill-item">Thermal Analysis</span>
+                    <span class="skill-item">Control Theory</span>
+                    <span class="skill-item">System Integration</span>
+                    <span class="skill-item">Project Management</span>
                 </div>
             </div>
         </div>
@@ -653,35 +695,40 @@
                     <p><strong>PolyGone Systems INC</strong> | Princeton, NJ</p>
                     <p>May 2025 - Present</p>
                     <ul>
-                        <li>Advanced CAD modeling and iterative prototyping in Autodesk Inventor</li>
-                        <li>Engineered autonomous control systems for microplastic filtration</li>
-                        <li>Oversaw fabrication, procurement, and supplier management</li>
-                        <li>Developed automated lifting/lowering mechanisms</li>
+                        <li>Advanced CAD modeling and iterative prototyping in Autodesk Inventor for microplastic filtration systems</li>
+                        <li>Engineered and implemented autonomous control systems optimizing operational efficiency and system automation</li>
+                        <li>Oversaw fabrication, procurement, and supplier/vendor management for industrial deployment</li>
+                        <li>Developed automated lifting/lowering mechanisms and lead screw gantry systems for industrial applications</li>
+                        <li>Collaborated with cross-functional teams to integrate hardware and software components</li>
                     </ul>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3>Systems Engineer/ML Engineer (Co-op)</h3>
-                    <p><strong>Renault Nissan Technology</strong> | India</p>
+                    <h3>Systems Engineer/ML Engineer R&D Intern (Co-op)</h3>
+                    <p><strong>Renault Nissan Technology & Business Centre</strong> | India</p>
                     <p>Jan 2024 - Jul 2024</p>
                     <ul>
-                        <li>Developed Brake Pad Wear prediction ML software</li>
-                        <li>Conducted performance testing and data analysis</li>
-                        <li>Ensured compliance with EU emission standards</li>
-                        <li>Customized user-friendly software interface</li>
+                        <li>Developed Brake Pad Wear prediction Machine Learning software for lifecycle optimization</li>
+                        <li>Customized user-friendly interface allowing engagement for all users across engineering teams</li>
+                        <li>Conducted performance testing of brake pad materials and components in lab environment</li>
+                        <li>Collected and analyzed data to support development of hybrid prediction models</li>
+                        <li>Ensured compliance with EU emission standards through predictive maintenance algorithms</li>
+                        <li>Collaborated with cross-functional teams to integrate ML models into existing automotive systems</li>
                     </ul>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3>Firmware Engineer Intern</h3>
-                    <p><strong>Larsen and Toubro</strong> | India</p>
+                    <h3>Firmware Engineer Summer Intern</h3>
+                    <p><strong>Larsen and Toubro (Building Technology)</strong> | India</p>
                     <p>Jun 2023 - Jul 2023</p>
                     <ul>
-                        <li>Developed ML-based AC control system</li>
-                        <li>Conducted coolant system analysis for VAVE project</li>
-                        <li>Enhanced autonomous indoor environment control</li>
+                        <li>Developed ML-based AC control system along with hardware implementation</li>
+                        <li>Enhanced autonomous indoor environment control through predictive algorithms</li>
+                        <li>Conducted in-rack and in-row coolant system analysis for VAVE Benchmarking Analysis Project</li>
+                        <li>Achieved substantial cost savings through energy efficiency optimization</li>
+                        <li>Implemented sensor fusion techniques for improved environmental monitoring</li>
                     </ul>
                 </div>
             </div>
@@ -690,58 +737,104 @@
 
     <!-- Projects -->
     <section id="projects" class="container">
-        <h2>Featured Projects</h2>
+        <h2>Technical Projects</h2>
         <div class="grid">
             <div class="card">
-                <h3>Gesture Controlled Continuum Robot</h3>
-                <p><strong>Team Leader | Major Project</strong></p>
-                <p>Novel infinite DOF manipulator for tunnel inspection using OpenCV and ML</p>
+                <h3>Gesture Controlled Continuum Robot for Tunnel Inspection</h3>
+                <p><strong>Team Leader | Major Undergraduate Project</strong></p>
+                <p>A novel design of infinite degree of freedom (theoretically) manipulator with gesture movement control for hazardous environment inspection.</p>
                 <ul>
-                    <li>Real-time gesture recognition and control</li>
-                    <li>Autonomous crack detection system</li>
-                    <li>Published technical paper with DOI</li>
+                    <li>Led CAD design (SolidWorks), structural analysis (ANSYS), and computer vision integration (OpenCV)</li>
+                    <li>Engineered hardware-software systems for real-time gesture-to-motion control</li>
+                    <li>Implemented autonomous crack detection using ML algorithms</li>
+                    <li>Published technical paper with DOI: 10.13140/RG.2.2.30510.52802</li>
+                    <li>Integrated tendon-driven mechanism for flexible movement in constrained spaces</li>
                 </ul>
-                <a href="https://dx.doi.org/10.13140/RG.2.2.30510.52802" class="btn" target="_blank">View Paper</a>
+                <a href="https://dx.doi.org/10.13140/RG.2.2.30510.52802" class="btn" target="_blank">View Research Paper</a>
             </div>
             <div class="card">
-                <h3>Autonomous Mobile Robot</h3>
-                <p><strong>Master's Project | ROS SLAM</strong></p>
-                <p>LiDAR and vision-based navigation for hospital delivery</p>
+                <h3>Autonomous Mobile Robot with ROS SLAM</h3>
+                <p><strong>Master's Project | NYU Tandon</strong></p>
+                <p>Engineered an autonomous mobile robot powered by Raspberry Pi for hospital delivery applications.</p>
                 <ul>
-                    <li>Real-time SLAM mapping with LiDAR</li>
-                    <li>Obstacle avoidance and path planning</li>
-                    <li>ROS-based navigation stack</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>Drone Fail-Safe System</h3>
-                <p><strong>Mars Rover Inspired Safety System</strong></p>
-                <p>Arduino-based emergency deployment system</p>
-                <ul>
-                    <li>IMU-based fall detection</li>
-                    <li>Parachute and airbag deployment</li>
-                    <li>Real-time data transmission</li>
+                    <li>Integrated Intel RealSense D435i and LiDAR sensors for real-time SLAM-based mapping</li>
+                    <li>Developed live navigation system using ROS and RViz for path planning</li>
+                    <li>Implemented autonomous delivery system for hospital amenities with obstacle avoidance</li>
+                    <li>Enabled precise endpoint navigation through sensor fusion techniques</li>
+                    <li>Created scalable architecture for multi-robot coordination</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Humanoid Robotics</h3>
+                <h3>Drone Fail-Safe System (Mars Rover Inspired)</h3>
+                <p><strong>Safety-Critical Systems Project</strong></p>
+                <p>Developed an Arduino-based failsafe system for UAV emergency scenarios with multiple redundancy layers.</p>
+                <ul>
+                    <li>Implemented fall detection & parachute deployment using IMU sensors</li>
+                    <li>Designed airbag activation system using CO2 cartridge for soft landing</li>
+                    <li>Integrated NRF module for real-time data transmission (GPS coordinates, sensor readings)</li>
+                    <li>Created comprehensive safety solution with multiple redundancy layers</li>
+                    <li>Tested system under various failure scenarios to ensure reliability</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Humanoid Robotics Development</h3>
                 <p><strong>NYU Team Project Lead</strong></p>
-                <p>Upper-body humanoid with LLM/VLM integration</p>
+                <p>Leading development of upper-body humanoid robot with advanced AI capabilities.</p>
                 <ul>
-                    <li>Multi-disciplinary team management</li>
-                    <li>Task planning and vision systems</li>
-                    <li>Compliant actuators development</li>
+                    <li>Integrating LLM/VLM systems for task planning and vision capabilities</li>
+                    <li>Managing multi-disciplinary team of ME, EE, and CS students</li>
+                    <li>Developing compliant actuators and interactive control systems</li>
+                    <li>Implementing sensor fusion for environment perception and interaction</li>
+                    <li>Designing modular architecture for scalable development</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Wireless Transmission Project for EV Charging</h3>
+                <p><strong>Team Head | Patent Pending</strong></p>
+                <p>Leading patent-pending project for wireless energy transmission for electric vehicle charging infrastructure.</p>
+                <ul>
+                    <li>Collaborating with Professor Sivanandam of Mechatronics Department</li>
+                    <li>Developing scalable solution for electric vehicle infrastructure</li>
+                    <li>Designing efficient power transfer systems with minimal energy loss</li>
+                    <li>Implementing safety protocols for high-power wireless transmission</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Biomimetic Robotic Arm with Hand Movement Replication</h3>
+                <p><strong>Master's Project | Advanced Robotics</strong></p>
+                <p>Design and build a Biomimetic robotic arm that replicates human hand movements with multi-modal sensing.</p>
+                <ul>
+                    <li>Incorporating advanced features like a soft robotic gripper</li>
+                    <li>Implementing hand movement detection and mapping algorithms</li>
+                    <li>Developing compliant control strategies for delicate object manipulation</li>
+                    <li>Integrating tactile sensors for feedback control</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Project Highlight -->
+        <!-- Additional Projects Highlight -->
         <div class="project-highlight">
             <div class="project-highlight-content">
-                <h3>Wireless EV Charging Project</h3>
-                <p><strong>Team Head | Patent Pending</strong></p>
-                <p>Leading development of wireless energy transmission system for electric vehicle charging infrastructure in collaboration with Professor Sivanandam.</p>
-                <a href="#contact" class="btn btn-outline">Learn More</a>
+                <h3>Additional Technical Projects</h3>
+                <p><strong>Diverse Portfolio of Engineering Solutions</strong></p>
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 1rem;">
+                    <div>
+                        <h4>Line Follower Robot</h4>
+                        <p>Autonomous navigation using IR sensors and custom PCB design</p>
+                    </div>
+                    <div>
+                        <h4>SCARA Manipulator Control</h4>
+                        <p>Kinematic analysis and simulation using MATLAB Simulink</p>
+                    </div>
+                    <div>
+                        <h4>Object Recognition System</h4>
+                        <p>Real-time detection using YOLO/SSD on Raspberry Pi</p>
+                    </div>
+                    <div>
+                        <h4>Remote-Controlled Airplane</h4>
+                        <p>Custom PCB design and aerodynamics optimization</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -753,50 +846,53 @@
             <div class="card">
                 <h3>Technical Paper</h3>
                 <p><strong>"Gesture Controlled Underground Tunnel Inspection Tendon Driven Continuum Robot"</strong></p>
-                <p>Published technical report with digital object identifier</p>
+                <p>Published technical report with comprehensive analysis of continuum robot design, control systems, and practical applications in hazardous environment inspection.</p>
+                <p><strong>Key Contributions:</strong> Novel gesture control interface, tendon-driven mechanism optimization, autonomous crack detection algorithm</p>
                 <a href="https://dx.doi.org/10.13140/RG.2.2.30510.52802" class="btn" target="_blank">DOI: 10.13140/RG.2.2.30510.52802</a>
             </div>
             <div class="card">
                 <h3>Conference Presentations</h3>
                 <ul>
-                    <li>Incremental control system design and flight tests of micro-coaxial rotor UAV</li>
-                    <li>Multi-objective optimum energy management for hybrid electric vehicles</li>
+                    <li><strong>"Incremental control system design and flight tests of a micro-coaxial rotor UAV"</strong> - SRM Mechatronics Department, Feb 2023</li>
+                    <li><strong>"Multi-objective optimum energy management strategies for parallel hybrid electric vehicle"</strong> - SRM Mechatronics Department, Feb 2023</li>
                 </ul>
+                <p>Presented research findings to academic and industry professionals, receiving recognition for innovative approaches to complex engineering challenges.</p>
             </div>
         </div>
     </section>
 
-    <!-- Media Gallery -->
-    <section id="media" class="container">
-        <h2>Project Media</h2>
-        <div class="media-gallery">
-            <!-- Replace these with your actual images and videos -->
-            <div class="media-item">
-                <img src="https://via.placeholder.com/400x300/3498db/ffffff?text=Drone+Project" alt="Drone Fail-Safe System">
-                <div class="media-caption">
-                    <p>Drone Fail-Safe System Deployment</p>
-                </div>
+    <!-- Certifications -->
+    <section id="certifications" class="container">
+        <h2>Certifications & Awards</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Professional Certifications</h3>
+                <ul>
+                    <li><strong>Certified SolidWorks Associate (CSWA)</strong> - Dassault Systems</li>
+                    <li><strong>Aerial Robotics</strong> - University of Pennsylvania, Coursera</li>
+                    <li><strong>Computational Motion Planning</strong> - University of Pennsylvania, Coursera</li>
+                    <li><strong>Autodesk Fusion 360 Integrated CAD/CAM/CAE</strong> - Autodesk, Coursera</li>
+                    <li><strong>Mechatronics</strong> - IIT Roorkee, NPTEL</li>
+                    <li><strong>Business Law for Managers</strong> - IIT Kharagpur, NPTEL</li>
+                    <li><strong>Introduction to IoT and Embedded Systems</strong> - University of California, Irvine</li>
+                    <li><strong>Modeling and Debugging Embedded Systems</strong> - University of Colorado Boulder</li>
+                </ul>
             </div>
-            <div class="media-item">
-                <img src="https://via.placeholder.com/400x300/e74c3c/ffffff?text=Continuum+Robot" alt="Continuum Robot">
-                <div class="media-caption">
-                    <p>Gesture Controlled Continuum Robot</p>
-                </div>
-            </div>
-            <div class="media-item">
-                <img src="https://via.placeholder.com/400x300/2ecc71/ffffff?text=Mobile+Robot" alt="Autonomous Mobile Robot">
-                <div class="media-caption">
-                    <p>Autonomous Mobile Robot with LiDAR</p>
-                </div>
-            </div>
-            <div class="media-item">
-                <video controls poster="https://via.placeholder.com/400x300/9b59b6/ffffff?text=Project+Video">
-                    <source src="#" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="media-caption">
-                    <p>Project Demonstration Video</p>
-                </div>
+            <div class="card">
+                <h3>Awards & Recognition</h3>
+                <ul>
+                    <li><strong>4th Place among 72 teams</strong> - Dance Competition, Jhalak Event, Feb 2023</li>
+                    <li><strong>Innovation Award</strong> - Renault Nissan Technology & Business Centre, 2024</li>
+                    <li><strong>Academic Excellence Scholarship</strong> - SRM Institute of Science and Technology</li>
+                </ul>
+                
+                <h3>Leadership Positions</h3>
+                <ul>
+                    <li><strong>Team Advisor</strong> - Flexible AI-Enabled Mechatronics Systems - Soft Robot Design Team</li>
+                    <li><strong>Team Head</strong> - Wireless Transmission Project for EV charging (in-patent process)</li>
+                    <li><strong>Secretary, Arts and Culture</strong> - Directorate of Student Affairs (DSA)</li>
+                    <li><strong>Electronics Event Organizer</strong> - Mechatronics Department, SRM University</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -809,6 +905,7 @@
                 <i class="fas fa-envelope"></i>
                 <h3>Email</h3>
                 <p>ssk10038@nyu.edu</p>
+                <a href="mailto:ssk10038@nyu.edu" class="btn">Send Email</a>
             </div>
             <div class="contact-card">
                 <i class="fas fa-phone"></i>
@@ -819,6 +916,7 @@
                 <i class="fas fa-map-marker-alt"></i>
                 <h3>Location</h3>
                 <p>New York, USA</p>
+                <p><strong>Work Authorization:</strong> STEM OPT Eligible</p>
             </div>
             <div class="contact-card">
                 <i class="fas fa-file-pdf"></i>
@@ -828,9 +926,15 @@
         </div>
         
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/sven-sunny-kottuppallil/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:ssk10038@nyu.edu"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/sven-sunny-kottuppallil/" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:ssk10038@nyu.edu" title="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
         </div>
     </section>
 
@@ -877,6 +981,27 @@
             section.style.transform = 'translateY(20px)';
             section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(section);
+        });
+
+        // Update active navigation link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
